@@ -4,8 +4,30 @@
         // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
         //your code...
-        function tekCamp() {}
-        // tekCamp();
+        function tekCamp() {
+            for ( let i = 1; i <= 100; i++ ){
+                if ( i % 3 === 0 && i % 5 === 0 )
+                  {
+                    console.log( i + "TEKcamp" );
+                  }
+                  else if ( i % 3 === 0 ) 
+                  {
+                    console.log(i + "TEK" );
+                  }
+                  else if ( i % 5 === 0 ) 
+                  {
+                    console.log(i + "camp" );
+                  }
+                  else
+                  {
+                    console.log(i);
+                  }
+            }
+
+        }
+
+    
+        tekCamp();
 
 
 
@@ -13,9 +35,15 @@
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
         //your code...
-        function farenheitCelsius() {
+        function farenheitCelsius(fahrenheit) {
+            let fTemp = fahrenheit;
+            let farToCel = (fTemp - 32) * 5 / 9;
+            console.log(farToCel);
 
         }
+
+        farenheitCelsius(32);
+        farenheitCelsius(68);
 
 
 
@@ -24,11 +52,15 @@
         //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
         //your code...
-        function celsiusFarenheit() {
+        function celsiusFarenheit(celcius) {
+            let cTemp = celcius;
+            let celToFar = cTemp * 9 / 5 + 32;
+            console.log(celToFar);
 
         }
 
-
+        celsiusFarenheit(0);
+        celsiusFarenheit(10);
 
 
 
@@ -37,11 +69,20 @@
 
         //your code...
         function canVote(age) {
+            if (age >= 18){
+                console.log("You are old enough to vote!");
+                return true;
+            } 
+
+            console.log("You are NOT old enough to vote!");
             return false;
         }
 
 
 
+        canVote(18);
+        canVote(15);
+        canVote(42);
 
 
 
@@ -51,8 +92,13 @@
 
         //your code...
         function strToArr() {
+            const message = "What is the answer?";
+            const array = message.split('');
+            console.log(array)
             return [];
         }
+
+        strToArr();
 
 
 
@@ -64,9 +110,23 @@
         // Write a function that reverses your telephone number.  It should return the reversed telephone number.
 
         //your code...
-        function reversePhone(number) {
-            
-        }
+        // function reversePhone(number) {
+        //     const phone = number;
+        //     console.log(
+        //         split('').reverse('').join('') 
+        //         )
+        // }
+
+        // reversePhone(4434702688);
+
+
+// var fruits = ["Banana", "Orange", "Apple", "Mango"];
+// fruits.reverse();
+
+// console.log( 
+//     +prompt("Enter a value").split("").reverse().join("") 
+// )
+        
 
 
 
@@ -158,18 +218,38 @@
 
         const day = "friday";
 
-        if(day === "monday") {
-            console.log("we got a long week ahead of us...");
-        } else if(day === "tuesday") {
-            console.log("tuesday's are still beterr than mondays, but LONG way to go still");
-        } else if (day === "wednesday") {
-            console.log("We are smack dab in the middle of the week");
-        } else if (day === "thursday") {
-            console.log("Thursday night... the mood is right");
-        } else if (day === "friday") {
-            console.log("TGIF.  Friday truly is the best day of the week!")
-        } else {
-            console.log("It's a weekend!")
+        // if(day === "monday") {
+        //     console.log("we got a long week ahead of us...");
+        // } else if(day === "tuesday") {
+        //     console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+        // } else if (day === "wednesday") {
+        //     console.log("We are smack dab in the middle of the week");
+        // } else if (day === "thursday") {
+        //     console.log("Thursday night... the mood is right");
+        // } else if (day === "friday") {
+        //     console.log("TGIF.  Friday truly is the best day of the week!")
+        // } else {
+        //     console.log("It's a weekend!")
+        // }
+
+        switch(day) {
+            case "monday":
+                console.log("we got a long week ahead of us...");
+            break;
+            case "tuesday":
+                console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+            break;
+            case "wednesday": 
+                console.log("We are smack dab in the middle of the week");
+            break;
+            case "thursday":
+                console.log("Thursday night... the mood is right");
+            break;
+            case "friday":
+                console.log("TGIF.  Friday truly is the best day of the week!")
+            break;
+            default:
+                console.log("It's a weekend!")
         }
 
 
